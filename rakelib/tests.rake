@@ -15,9 +15,13 @@ begin
 
     desc "Run RSpec tests that do not require VM fixtures or a particular shell"
     RSpec::Core::RakeTask.new(:unit) do |t|
-      t.pattern = "spec/unit/**/*_spec.rb"
       if ENV['TEST']
+        t.pattern = "spec/unit/**/*_spec.rb"
         t.rspec_opts = "-e '#{ENV['TEST']}'"
+      elsif ENV['FILE']
+        t.pattern = ENV['FILE']
+      else
+        t.pattern = "spec/unit/**/*_spec.rb"
       end
     end
 
