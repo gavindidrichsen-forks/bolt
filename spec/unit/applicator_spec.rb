@@ -86,8 +86,10 @@ describe Bolt::Applicator do
       .with('ruby', /bolt_catalog/, 'compile', stdin_data: input.merge(target_hash).to_json)
       .and_return(['{}', logs.map(&:to_json).join("\n"), double(:status, success?: true)])
     expect(applicator.compile(target, input)).to eq({})
-    expect(@log_output.readlines).to eq(
+    expect(@log_output.readlines).to match(
       [
+        /TRACE  Bolt::Util : Loaded project from/,
+        / INFO  Bolt::Logger : Loaded default project from /,
         "DEBUG  Bolt::Executor : Started with 1 max thread(s)\n",
         "DEBUG  Bolt::Inventory::Inventory : Did not find config for #{target.uri} in inventory\n",
         "TRACE  Bolt::Applicator : #{target.uri}: A message\n",
