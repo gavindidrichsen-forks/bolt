@@ -1,5 +1,8 @@
-# lib/bolt/puppetfile/installer.rb
+# frozen_string_literal: true
+
+require 'spec_helper'
 require 'bolt/forge/token'
+
 module Bolt
   class Puppetfile
     class Installer

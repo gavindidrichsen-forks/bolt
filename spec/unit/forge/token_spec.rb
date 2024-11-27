@@ -1,4 +1,5 @@
-# spec/bolt/forge/token_spec.rb
+# frozen_string_literal: true
+
 require 'bolt/forge/token'
 
 describe Bolt::Forge::Token do

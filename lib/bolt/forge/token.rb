@@ -1,4 +1,5 @@
-# lib/bolt/forge/token.rb
+# frozen_string_literal: true
+
 module Bolt
   module Forge
     class Token
