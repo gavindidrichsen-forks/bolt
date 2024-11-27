@@ -24,9 +24,24 @@ See Appendix for a simple command-line example.
 
 ### Setup and Verification
 
+#### Pre-requisites
+
+Ensure these are installed:
+
+* [rbenv](https://github.com/rbenv/rbenv)
+* [direnv](https://direnv.net)
+* `rbenv install 3.2.5`
+
 #### Setup bolt before running tests
 
+
 ```bash
+# configure rbenv, ruby 3.2.5, and direnv
+rbenv local 3.2.5
+echo "layout ruby" > .envrc
+echo "use rbenv" >> .envrc
+direnv allow
+
 # configure bundle and install all bolt gem dependencies
 bundle config --local gemfile Gemfile
 bundle config --local path .direnv/ruby/gems
