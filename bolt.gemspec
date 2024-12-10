@@ -55,6 +55,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "net-scp", ">= 1.2", "< 5.0"
   spec.add_dependency "net-ssh", ">= 4.0", "< 8.0"
   spec.add_dependency "net-ssh-krb", "~> 0.5"
+  spec.add_dependency 'ed25519', '>= 1.2', '< 2.0'
+  spec.add_dependency 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
   spec.add_dependency "orchestrator_client", "~> 0.7"
   spec.add_dependency "puppet", ">= 6.18.0"
   spec.add_dependency "puppetfile-resolver", ">= 0.6.2", "< 1.0"
